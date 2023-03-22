@@ -5,7 +5,12 @@ export default function Invoice() {
 	let data = {
 		number: "0008",
 		me: {
-			name: "Company name",
+			name: (
+				<span>
+					<span className='font-bold'>Dre_vil</span>
+					<span className='font-normal'>Aids</span>
+				</span>
+			),
 			address: "Example street, 9000 Ghent",
 		},
 		client: {
@@ -26,18 +31,21 @@ export default function Invoice() {
 
 	return (
 		<div className='text-1xl'>
-			<div className='bg-white page shadow p-12'>
-				<header>
-					<h1 className='text-3xl font-bold text-blue-800'>{data.me.name}</h1>
+			<div className='bg-white page shadow rounded-lg overflow-hidden'>
+				<header className='bg-blue-800 p-12'>
+					<h1 className='text-3xl font-bold text-white'>{data.me.name}</h1>
 				</header>
 
 				<div>
 					<span className='text-2xl'>
-						<span className='text-blue-800 font-semibold uppercase'>
-							Invoice
+						<span>
+							<span className='text-blue-800 font-semibold uppercase'>
+								Invoice
+							</span>
+							<span className='text-blue-300'>.</span>
 						</span>
-						<span className='text-blue-300'>.</span>
-						<span className='text-gray-500'> / {data.number}</span>
+						<span className='text-gray-500'> /</span>
+						<span className='text-gray-500'> {data.number}</span>
 					</span>
 				</div>
 
