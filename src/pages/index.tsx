@@ -6,7 +6,7 @@ export default function Invoice() {
 		number: "0008",
 		me: {
 			name: (
-				<span>
+				<span className='space-x-1  font-bold text-white'>
 					<span className='font-bold'>Dre_vil</span>
 					<span className='font-normal'>Aids</span>
 				</span>
@@ -30,13 +30,16 @@ export default function Invoice() {
 	};
 
 	return (
-		<div className='text-1xl'>
-			<div className='bg-white page shadow rounded-lg overflow-hidden'>
+		<div className=' '>
+			<div className='bg-white page shadow rounded-lg overflow-hidden space-y-8'>
 				<header className='bg-blue-800 p-12'>
-					<h1 className='text-3xl font-bold text-white'>{data.me.name}</h1>
+					<div>
+						<h1 className='text-3xl'>{data.me.name}</h1>
+						<div className='bg-blue-800 bg-opacity-75 w-full h-4'></div>
+					</div>
 				</header>
 
-				<div>
+				<div className='p-12'>
 					<span className='text-2xl'>
 						<span>
 							<span className='text-blue-800 font-semibold uppercase'>
@@ -49,23 +52,29 @@ export default function Invoice() {
 					</span>
 				</div>
 
-				<div className='grid grid-cols-5'>
-					<div className='font-bold'>Description</div>
-					<div className='font-bold'>#</div>
-					<div className='font-bold'>Unit price</div>
-					<div className='font-bold'>VAT</div>
-					<div className='font-bold'>Subtotal</div>
+				<table>
+					<thead>
+						<tr>
+							<th className='font-bold'>Description</th>
+							<th className='font-bold'>#</th>
+							<th className='font-bold'>Unit price</th>
+							<th className='font-bold'>VAT</th>
+							<th className='font-bold'>Subtotal</th>
+						</tr>
+					</thead>
 
-					{data.items.map((item) => (
-						<Fragment key={item.id}>
-							<div>{item.description}</div>
-							<div>{item.units}</div>
-							<div>{item.price}</div>
-							<div>{item.vat}</div>
-							<div>{item.units * item.price}</div>
-						</Fragment>
-					))}
-				</div>
+					<tbody>
+						{data.items.map((item) => (
+							<tr key={item.id}>
+								<td>{item.description}</td>
+								<td>{item.units}</td>
+								<td>{item.price}</td>
+								<td>{item.vat}</td>
+								<td>{item.units * item.price}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
 			</div>
 		</div>
 	);
