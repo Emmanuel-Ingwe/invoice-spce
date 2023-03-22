@@ -18,8 +18,8 @@ export default function Invoice() {
 		},
 
 		items: [
-			{ id: 1, description: "Line item #1", price: 1234, vat: 0.21 },
-			{ id: 2, description: "Line item #2", price: 43321, vat: 0.14 },
+			{ id: 1, description: "Line item #1", units: 1, price: 1234, vat: 0.21 },
+			{ id: 2, description: "Line item #2", units: 3, price: 43321, vat: 0.14 },
 			{ id: 3, description: "Line item #3", units: 0, price: 2134, vat: 0.31 },
 		],
 	};
@@ -28,23 +28,27 @@ export default function Invoice() {
 		<div className='text-1xl'>
 			<div className='bg-white page shadow p-12'>
 				<header>
-					<h1>{data.me.name}</h1>
+					<h1 className='text-3xl font-bold text-blue-800'>{data.me.name}</h1>
 				</header>
 
 				<div>
 					<span>Invoice {data.number}</span>
 				</div>
 
-				<div className='grid grid-cols-4'>
-					<div>Description</div>
-					<div>#</div>
-					<div>Unit price</div>
-					<div>VAT</div>
-					<div>Subtotal</div>
+				<div className='grid grid-cols-5'>
+					<div className='font-bold'>Description</div>
+					<div className='font-bold'>#</div>
+					<div className='font-bold'>Unit price</div>
+					<div className='font-bold'>VAT</div>
+					<div className='font-bold'>Subtotal</div>
 
 					{data.items.map((item) => (
 						<Fragment key={item.id}>
 							<div>{item.description}</div>
+							<div>{item.units}</div>
+							<div>{item.price}</div>
+							<div>{item.vat}</div>
+							<div>{item.units * item.price}</div>
 						</Fragment>
 					))}
 				</div>
