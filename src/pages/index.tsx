@@ -32,7 +32,13 @@ export default function Invoice() {
 				</header>
 
 				<div>
-					<span>Invoice {data.number}</span>
+					<span className='text-2xl'>
+						<span className='text-blue-800 font-semibold uppercase'>
+							Invoice
+						</span>
+						<span className='text-blue-300'>.</span>
+						<span className='text-gray-500'> / {data.number}</span>
+					</span>
 				</div>
 
 				<div className='grid grid-cols-5'>
