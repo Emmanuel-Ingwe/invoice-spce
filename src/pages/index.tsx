@@ -2,8 +2,8 @@ import Head from "next/head";
 
 export default function Home() {
 	return (
-		<>
-			<h1 className='bg-red-600'>Next</h1>
-		</>
+		<div className='grid place-content-center bg-red-500'>
+			<div className='bg-white page'>Invoice</div>
+		</div>
 	);
 }

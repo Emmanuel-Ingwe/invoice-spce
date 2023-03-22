@@ -7,3 +7,20 @@
 	padding: 0;
 	margin: 0;
 }
+
+@layer base {
+	html,
+	body {
+		@apply w-full h-full;
+	}
+	body {
+		@apply antialiased text-gray-900 bg-gray-100 flex items-center justify-center;
+	}
+}
+
+@layer components {
+	.page {
+		width: 210mm;
+		height: 297mm;
+	}
+}
