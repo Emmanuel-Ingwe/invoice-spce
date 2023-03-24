@@ -54,44 +54,52 @@ export default function Invoice() {
 
 				<table className=' w-full'>
 					<thead className=''>
-						<tr>
-							<th className='border-b-2 border-none-slate-600 pr-9 text-left ...'>
-								Name
+						<tr className=' text-gray-400'>
+							<th className='uppercase border-b-2 border-none-slate-600 pl-5 text-left ...'>
+								Description
 							</th>
 							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
-								Title
+								#
 							</th>
 							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
-								Email
+								UNIT PRICE
 							</th>
 							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
-								Role
+								VAT
 							</th>
 						</tr>
 					</thead>
 					<tbody className=''>
-						<tr>
-							<td className='border-none border-none-slate-700 ...'>Indiana</td>
-							<td className='border-none border-none-slate-700 ...'>
-								Indianapolis
+						{data.items.map((item, lineIdx) => (
+							<tr key={item.id} className={lineIdx % 2 === 0 ? "bg-white" : ""}>
+								<td className='border-none border-none-slate-700 pl-5 ...'>
+									{item.description}
+								</td>
+								<td className='pl-9 border-none border-none-slate-700 ...'>
+									{item.units}
+								</td>
+								<td className='pl-9'>{item.price}</td>
+								<td className='pl-4'>{item.vat}</td>
+								<td>
+									<a className='text-blue-600 hover:text-indigo-900' href='#'>
+										Edit
+									</a>
+								</td>
+							</tr>
+						))}
+						<tr className='border-b-2'>
+							<td className='pl-5 border-none border-none-slate-700 ...'>
+								Ohio
 							</td>
-							<td>jane455@gmail.com</td>
-							<td>Admin</td>
-							<td>
-								<a className='border-t-2' href='#'>
-									Edit
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td className='border-none border-none-slate-700 ...'>Ohio</td>
-							<td className='border-none border-none-slate-700 ...'>
+							<td className='pl-9 border-none border-none-slate-700 ...'>
 								Columbus
 							</td>
-							<td>okon.com@yahoomail</td>
-							<td>Owner</td>
+							<td className='pl-9'>okon.com@yahoomail</td>
+							<td className='pl-4'>Owner</td>
 							<td>
-								<a href='#'>Edit</a>
+								<a className='text-blue-600' href='#'>
+									Edit
+								</a>
 							</td>
 						</tr>
 					</tbody>
