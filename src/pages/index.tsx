@@ -39,7 +39,7 @@ export default function Invoice() {
 					</div>
 				</header>
 
-				<div className='p-12'>
+				<div className='p-6'>
 					<span className='text-2xl'>
 						<span>
 							<span className='text-blue-800 font-semibold uppercase'>
@@ -52,29 +52,74 @@ export default function Invoice() {
 					</span>
 				</div>
 
-				<table>
-					<thead>
+				<table className='block '>
+					<thead className=''>
 						<tr>
-							<th className='font-bold'>Description</th>
-							<th className='font-bold'>#</th>
-							<th className='font-bold'>Unit price</th>
-							<th className='font-bold'>VAT</th>
-							<th className='font-bold'>Subtotal</th>
+							<th className='border-b-2 border-none-slate-600 pr-9 ...'>
+								Name
+							</th>
+							<th className='border-b-2 border-none-slate-600 pr-9 ...'>
+								Title
+							</th>
+							<th className='border-b-2 border-none-slate-600 pr-9 ...'>
+								Email
+							</th>
+							<th className='border-b-2 border-none-slate-600 pr-9 ...'>
+								Role
+							</th>
 						</tr>
 					</thead>
-
-					<tbody>
-						{data.items.map((item) => (
-							<tr key={item.id}>
-								<td>{item.description}</td>
-								<td>{item.units}</td>
-								<td>{item.price}</td>
-								<td>{item.vat}</td>
-								<td>{item.units * item.price}</td>
-							</tr>
-						))}
+					<tbody className=''>
+						<tr>
+							<td className='border-none border-none-slate-700 ...'>Indiana</td>
+							<td className='border-none border-none-slate-700 ...'>
+								Indianapolis
+							</td>
+							<td>jane455@gmail.com</td>
+							<td>Amin</td>
+						</tr>
+						<tr>
+							<td className='border-none border-none-slate-700 ...'>Ohio</td>
+							<td className='border-none border-none-slate-700 ...'>
+								Columbus
+							</td>
+							<td>okon.com@yahoomail</td>
+							<td>Owner</td>
+						</tr>
+						<tr>
+							<td className='border-none border-none-slate-700 ...'>
+								Michigan
+							</td>
+							<td className='border-none border-none-slate-700 ...'>Detroit</td>
+						</tr>
 					</tbody>
 				</table>
+
+				<div className='px-12'>
+					<table className='w-full border mx-12 '>
+						<thead>
+							<tr className='font-bold text-left'>
+								<th>Description</th>
+								<th>#</th>
+								<th>Unit price</th>
+								<th>VAT</th>
+								<th>Subtotal</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							{data.items.map((item) => (
+								<tr key={item.id}>
+									<td>{item.description}</td>
+									<td>{item.units}</td>
+									<td>{item.price}</td>
+									<td>{item.vat}</td>
+									<td>{item.units * item.price}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	);
