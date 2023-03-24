@@ -52,19 +52,19 @@ export default function Invoice() {
 					</span>
 				</div>
 
-				<table className='block '>
+				<table className=' w-full'>
 					<thead className=''>
 						<tr>
-							<th className='border-b-2 border-none-slate-600 pr-9 ...'>
+							<th className='border-b-2 border-none-slate-600 pr-9 text-left ...'>
 								Name
 							</th>
-							<th className='border-b-2 border-none-slate-600 pr-9 ...'>
+							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
 								Title
 							</th>
-							<th className='border-b-2 border-none-slate-600 pr-9 ...'>
+							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
 								Email
 							</th>
-							<th className='border-b-2 border-none-slate-600 pr-9 ...'>
+							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
 								Role
 							</th>
 						</tr>
@@ -76,7 +76,12 @@ export default function Invoice() {
 								Indianapolis
 							</td>
 							<td>jane455@gmail.com</td>
-							<td>Amin</td>
+							<td>Admin</td>
+							<td>
+								<a className='border-t-2' href='#'>
+									Edit
+								</a>
+							</td>
 						</tr>
 						<tr>
 							<td className='border-none border-none-slate-700 ...'>Ohio</td>
@@ -85,18 +90,15 @@ export default function Invoice() {
 							</td>
 							<td>okon.com@yahoomail</td>
 							<td>Owner</td>
-						</tr>
-						<tr>
-							<td className='border-none border-none-slate-700 ...'>
-								Michigan
+							<td>
+								<a href='#'>Edit</a>
 							</td>
-							<td className='border-none border-none-slate-700 ...'>Detroit</td>
 						</tr>
 					</tbody>
 				</table>
 
-				<div className='px-12'>
-					<table className='w-full border mx-12 '>
+				<div className='p-12'>
+					<table className='w-full border mx-1'>
 						<thead>
 							<tr className='font-bold text-left'>
 								<th>Description</th>
