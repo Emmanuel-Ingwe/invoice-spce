@@ -64,22 +64,28 @@ export default function Invoice() {
 							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
 								UNIT PRICE
 							</th>
-							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
+							<th className='border-b-2 px-6 py-3 text-left text-xs font-medium text-gray-500'>
 								VAT
 							</th>
 						</tr>
 					</thead>
 					<tbody className=''>
 						{data.items.map((item, lineIdx) => (
-							<tr key={item.id} className={lineIdx % 3 === 0 ? "bg-white" : ""}>
-								<td className='border-none border-none-slate-700 pl-5 ...'>
+							<tr
+								key={item.id}
+								className={lineIdx % 3 === 0 ? "bg-white border-b-2" : ""}>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
 									{item.description}
 								</td>
-								<td className='pl-9 border-none border-none-slate-700 ...'>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
 									{item.units}
 								</td>
-								<td className='pl-9'>{item.price}</td>
-								<td className='pl-4'>{item.vat}</td>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
+									{item.price}
+								</td>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
+									{item.vat}
+								</td>
 							</tr>
 						))}
 					</tbody>
