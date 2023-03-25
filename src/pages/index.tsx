@@ -1,6 +1,11 @@
 import Head from "next/head";
 import { Fragment } from "react";
 
+// let numberFormatter = new Intl.NumberFormat(undefined, {
+// 	style: "curently",
+// 	currency: "Eur",
+// });
+
 export default function Invoice() {
 	let data = {
 		number: "0008",
@@ -81,6 +86,7 @@ export default function Invoice() {
 									{item.units}
 								</td>
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
+									{/* {numberFormatter.format(item.price / 100)} */}
 									{item.price}
 								</td>
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
