@@ -71,7 +71,7 @@ export default function Invoice() {
 					</thead>
 					<tbody className=''>
 						{data.items.map((item, lineIdx) => (
-							<tr key={item.id} className={lineIdx % 2 === 0 ? "bg-white" : ""}>
+							<tr key={item.id} className={lineIdx % 3 === 0 ? "bg-white" : ""}>
 								<td className='border-none border-none-slate-700 pl-5 ...'>
 									{item.description}
 								</td>
