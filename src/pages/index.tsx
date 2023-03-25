@@ -80,56 +80,10 @@ export default function Invoice() {
 								</td>
 								<td className='pl-9'>{item.price}</td>
 								<td className='pl-4'>{item.vat}</td>
-								<td>
-									<a className='text-blue-600 hover:text-indigo-900' href='#'>
-										Edit
-									</a>
-								</td>
 							</tr>
 						))}
-						<tr className='border-b-2'>
-							<td className='pl-5 border-none border-none-slate-700 ...'>
-								Ohio
-							</td>
-							<td className='pl-9 border-none border-none-slate-700 ...'>
-								Columbus
-							</td>
-							<td className='pl-9'>okon.com@yahoomail</td>
-							<td className='pl-4'>Owner</td>
-							<td>
-								<a className='text-blue-600' href='#'>
-									Edit
-								</a>
-							</td>
-						</tr>
 					</tbody>
 				</table>
-
-				<div className='p-12'>
-					<table className='w-full border mx-1'>
-						<thead>
-							<tr className='font-bold text-left'>
-								<th>Description</th>
-								<th>#</th>
-								<th>Unit price</th>
-								<th>VAT</th>
-								<th>Subtotal</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							{data.items.map((item) => (
-								<tr key={item.id}>
-									<td>{item.description}</td>
-									<td>{item.units}</td>
-									<td>{item.price}</td>
-									<td>{item.vat}</td>
-									<td>{item.units * item.price}</td>
-								</tr>
-							))}
-						</tbody>
-					</table>
-				</div>
 			</div>
 		</div>
 	);
