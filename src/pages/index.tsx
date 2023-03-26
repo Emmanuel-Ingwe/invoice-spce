@@ -69,8 +69,11 @@ export default function Invoice() {
 							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
 								UNIT PRICE
 							</th>
-							<th className='border-b-2 px-6 py-3 text-left text-xs font-medium text-gray-500'>
+							<th className='border-b-2 px-6 py-3 text-right text-xs font-medium text-gray-500'>
 								VAT
+							</th>
+							<th className='border-b-2 px-6 py-3 text-right text-xs font-medium text-gray-500'>
+								Subtotal
 							</th>
 						</tr>
 					</thead>
@@ -82,15 +85,18 @@ export default function Invoice() {
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
 									{item.description}
 								</td>
-								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
+								<td className='px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500'>
 									{item.units}
 								</td>
-								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500  text-right'>
 									{/* {numberFormatter.format(item.price / 100)} */}
 									{item.price}
 								</td>
-								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right'>
 									{item.vat}
+								</td>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right'>
+									{item.price * item.units}
 								</td>
 							</tr>
 						))}
