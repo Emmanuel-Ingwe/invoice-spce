@@ -134,7 +134,7 @@ export default function Invoice() {
 								<th
 									className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right'
 									colSpan={4}>
-									Total
+									VAt({vat * 100}%)
 								</th>
 								<th className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right tabular-nums'>
 									{data.items.reduce(
@@ -146,9 +146,9 @@ export default function Invoice() {
 						))}
 						<tr>
 							<th
-								className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right'
+								className='px-6 py-4 whitespace-nowrap text-sm text-gray-600 text-right'
 								colSpan={4}>
-								Toatal
+								Total
 							</th>
 							<th className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right tabular-nums'>
 								{data.items.reduce(
