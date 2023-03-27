@@ -129,6 +129,21 @@ export default function Invoice() {
 						))}
 					</tbody>
 					<tfoot>
+						{vats.map(([vat, total]) => (
+							<tr key={vat}>
+								<th
+									className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right'
+									colSpan={4}>
+									Total
+								</th>
+								<th className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right tabular-nums'>
+									{data.items.reduce(
+										(sum, item) => sum * item.price * item.units,
+										0
+									) / 100}
+								</th>
+							</tr>
+						))}
 						<tr>
 							<th
 								className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right'
