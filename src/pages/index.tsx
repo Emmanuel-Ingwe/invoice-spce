@@ -13,6 +13,14 @@ interface Item {
 	vat: number;
 }
 
+interface Invoice {
+	items: Item[];
+}
+
+function total(items: Invoice["items"]) {
+	return items.reduce((sum, item) => sum + item.price * item.units, 0);
+}
+
 export default function Invoice() {
 	let data = {
 		number: "0008",
@@ -38,8 +46,17 @@ export default function Invoice() {
 			{ id: 1, description: "Line item #1", units: 1, price: 1234, vat: 0.21 },
 			{ id: 2, description: "Line item #2", units: 3, price: 43321, vat: 0.14 },
 			{ id: 3, description: "Line item #3", units: 0, price: 2134, vat: 0.31 },
+			{ id: 4, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
 		],
 	};
+
+	let vats = Object.entries(
+		data.items.reduce((grouped, item) => {
+			grouped[item.vat] ??= { total: 0, vat: item.vat };
+			grouped[item.vat].total += item.price * item.units * item.vat;
+			return grouped;
+		}, {})
+	);
 
 	return (
 		<div className=' '>
