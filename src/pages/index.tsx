@@ -1,10 +1,17 @@
 import Head from "next/head";
-import { Fragment } from "react";
+// import { Fragment } from "react";
 
 // let numberFormatter = new Intl.NumberFormat(undefined, {
 // 	style: "curently",
 // 	currency: "Eur",
 // });
+
+interface Item {
+	description: string;
+	units: number;
+	price: number;
+	vat: number;
+}
 
 export default function Invoice() {
 	let data = {
@@ -73,7 +80,10 @@ export default function Invoice() {
 								VAT
 							</th>
 							<th className='border-b-2 px-6 py-3 text-right text-xs font-medium text-gray-500'>
-								Subtotal
+								Subtotal (Excl. VAT)
+							</th>
+							<th className='border-b-2 px-6 py-3 text-right text-xs font-medium text-gray-500'>
+								Subtotal (INcl. VAT)
 							</th>
 						</tr>
 					</thead>
@@ -88,19 +98,34 @@ export default function Invoice() {
 								<td className='px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500'>
 									{item.units}
 								</td>
-								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500  text-right'>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500  text-right tabular-nums'>
 									{/* {numberFormatter.format(item.price / 100)} */}
 									{item.price}
 								</td>
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right'>
-									{item.vat}
+									{(item.vat * 100).toFixed(0)}%
 								</td>
-								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right'>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right tabular-nums'>
 									{item.price * item.units}
 								</td>
 							</tr>
 						))}
 					</tbody>
+					<tfoot>
+						<tr>
+							<th
+								className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right'
+								colSpan={4}>
+								Toatal
+							</th>
+							<th className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right tabular-nums'>
+								{data.items.reduce(
+									(sum, item) => sum * item.price * item.units,
+									0
+								) / 100}
+							</th>
+						</tr>
+					</tfoot>
 				</table>
 			</div>
 		</div>
