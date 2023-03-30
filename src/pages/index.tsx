@@ -6,8 +6,6 @@ import Head from "next/head";
 // 	currency: "Eur",
 // });
 
-<img src='gfg.jpg' alt='' />;
-
 interface Item {
 	description: string;
 	units: number;
