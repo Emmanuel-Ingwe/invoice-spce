@@ -6,6 +6,8 @@ import Head from "next/head";
 // 	currency: "Eur",
 // });
 
+<img src='gfg.jpg' alt='' />;
+
 interface Item {
 	description: string;
 	units: number;
@@ -94,7 +96,7 @@ export default function Invoice() {
 								UNIT PRICE
 							</th>
 							<th className='border-b-2 px-6 py-3 text-right text-xs font-medium text-gray-500'>
-								VAT
+								VATT
 							</th>
 							<th className='border-b-2 px-6 py-3 text-right text-xs font-medium text-gray-500'>
 								Subtotal (Excl. VAT)
