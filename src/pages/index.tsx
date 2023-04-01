@@ -68,8 +68,8 @@ export default function Invoice() {
 					</div>
 				</header>
 
-				<div className='p-6 '>
-					<span className='text-2xl'>
+				<div className='p-6 flex justify-between'>
+					<span className='text-2xl space-x-3'>
 						<span>
 							<span className='text-blue-800 font-semibold uppercase'>
 								Invoice
