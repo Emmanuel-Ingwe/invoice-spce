@@ -68,7 +68,7 @@ export default function Invoice() {
 					</div>
 				</header>
 
-				<div className='p-6'>
+				<div className='p-6 '>
 					<span className='text-2xl'>
 						<span>
 							<span className='text-blue-800 font-semibold uppercase'>
@@ -79,6 +79,10 @@ export default function Invoice() {
 						<span className='text-gray-500'> /</span>
 						<span className='text-gray-500'> {data.number}</span>
 					</span>
+					<div className='space-2 '>
+						<h3>Client</h3>
+						<span>{data.client.name}</span>
+					</div>
 				</div>
 
 				<table className=' w-full'>
@@ -99,9 +103,9 @@ export default function Invoice() {
 							<th className='border-b-2 px-6 py-3 text-right text-xs font-medium text-gray-500'>
 								Subtotal (Excl. VAT)
 							</th>
-							<th className='border-b-2 px-6 py-3 text-right text-xs font-medium text-gray-500'>
+							{/* <th className='border-b-2 px-6 py-3 text-right text-xs font-medium text-gray-500'>
 								Subtotal (INcl. VAT)
-							</th>
+							</th> */}
 						</tr>
 					</thead>
 					<tbody className=''>
