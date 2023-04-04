@@ -79,6 +79,9 @@ export default function Invoice() {
 						<span className='text-gray-300'> /</span>
 						<span className='text-gray-500'> {data.number}</span>
 					</span>
+				</div>
+
+				<div className='px-12 flex justify-between'>
 					<div className='space-2 '>
 						<h3>Client</h3>
 						<span>{data.client.name}</span>
