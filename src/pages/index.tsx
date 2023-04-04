@@ -76,7 +76,7 @@ export default function Invoice() {
 							</span>
 							<span className='text-blue-300'>.</span>
 						</span>
-						<span className='text-gray-500'> /</span>
+						<span className='text-gray-300'> /</span>
 						<span className='text-gray-500'> {data.number}</span>
 					</span>
 					<div className='space-2 '>
