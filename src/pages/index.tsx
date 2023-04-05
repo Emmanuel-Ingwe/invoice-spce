@@ -170,21 +170,10 @@ export default function Invoice() {
 								</th>
 							</tr>
 						))}
-						<tr>
-							<th
-								className='px-6 py-4 whitespace-nowrap text-sm text-gray-600 text-right'
-								colSpan={4}>
-								Total
-							</th>
-							<th className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right tabular-nums'>
-								{data.items.reduce(
-									(sum, item) => sum * item.price * item.units,
-									0
-								) / 100}
-							</th>
-						</tr>
 					</tfoot>
 				</table>
+
+				<div className='bg-blue-900 p-12 text-white'>Hello footer?</div>
 			</div>
 		</div>
 	);
