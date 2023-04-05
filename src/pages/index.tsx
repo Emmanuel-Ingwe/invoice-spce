@@ -87,20 +87,22 @@ export default function Invoice() {
 				<div className='px-12 flex justify-between'>
 					<div className='space-2 '>
 						<h3 className='font-semibold text-gray-400'>Information </h3>
-						<div className='flex flex-col'>
+						<div className='flex space-x-2'>
 							<span>Issue date:</span>
 							<span>{format(data.dates.issue, "PPP")}</span>
 						</div>
 						<div className='flex space-x-2'>
 							<span>Due date:</span>
 							<span>{format(addDays(data.dates.issue, 30), "PPP")}</span>
+							<span className='text-gray-500 font-light'>(30 days)</span>
 						</div>
-						<div className='space-2'>
-							<h3 className='font-semibold text-gray-400'>Client</h3>
-							<div className='flex flex-col'>
-								<span>{data.client.name}</span>
-								<span>{data.client.addresss}</span>
-							</div>
+					</div>
+
+					<div className='space-2'>
+						<h3 className='font-semibold text-gray-400'>Client</h3>
+						<div className='flex flex-col'>
+							<span>{data.client.name}</span>
+							<span>{data.client.addresss}</span>
 						</div>
 					</div>
 				</div>
