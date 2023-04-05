@@ -173,7 +173,26 @@ export default function Invoice() {
 					</tfoot>
 				</table>
 
-				<div className='bg-blue-900 p-12 text-white'>Hello footer?</div>
+				<div className=''>
+					<div className='bg-blue-900 bg-opacity-75 w-full h-4'></div>
+					<div className='bg-blue-900 p-12 text-blue-100'>
+						<div className='flex justify-between text-2xl font-semibold'>
+							<span>Total amount to be paid</span>
+							<span>£121.00</span>
+						</div>
+
+						<div className='space-y-2'>
+							<h3 className='font-bold text-blue-100 text-xl'>
+								Payment details
+							</h3>
+							<div className='flex flex-col font-bold'>
+								<span>Email: hello@gbssh.com</span>
+								<span>VAT:</span>
+								<span>IBAN:</span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
