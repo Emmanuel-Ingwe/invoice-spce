@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { format } from "path";
 // import { Fragment } from "react";
 
 // let numberFormatter = new Intl.NumberFormat(undefined, {
@@ -59,7 +60,7 @@ export default function Invoice() {
 	);
 
 	return (
-		<div className=' '>
+		<div>
 			<div className='bg-white page shadow rounded-lg overflow-hidden space-y-8'>
 				<header className='bg-blue-800 p-12'>
 					<div>
@@ -83,8 +84,16 @@ export default function Invoice() {
 
 				<div className='px-12 flex justify-between'>
 					<div className='space-2 '>
-						<h3>Client</h3>
-						<span>{data.client.name}</span>
+						<h3 className='font-semibold text-gray-400'>Information </h3>
+						<div className='flex flex-col'>
+							<span>{format(data.dates.issue, "PPP", { locale: NL })}</span>
+							<span>{data.client.addresss}</span>
+						</div>
+
+						<div>
+							<h3>Client</h3>
+							<span>{data.client.name}</span>
+						</div>
 					</div>
 				</div>
 
