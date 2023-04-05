@@ -1,5 +1,7 @@
-import Head from "next/head";
-import { format } from "path";
+import React from "react";
+import { addDays, format } from "date-fns";
+// import { NL } from "date-fns/local/nl";
+
 // import { Fragment } from "react";
 
 // let numberFormatter = new Intl.NumberFormat(undefined, {
@@ -86,13 +88,19 @@ export default function Invoice() {
 					<div className='space-2 '>
 						<h3 className='font-semibold text-gray-400'>Information </h3>
 						<div className='flex flex-col'>
-							<span>{format(data.dates.issue, "PPP", { locale: NL })}</span>
-							<span>{data.client.addresss}</span>
+							<span>Issue date:</span>
+							<span>{format(data.dates.issue, "PPP")}</span>
 						</div>
-
-						<div>
-							<h3>Client</h3>
-							<span>{data.client.name}</span>
+						<div className='flex space-x-2'>
+							<span>Due date:</span>
+							<span>{format(addDays(data.dates.issue, 30), "PPP")}</span>
+						</div>
+						<div className='space-2'>
+							<h3 className='font-semibold text-gray-400'>Client</h3>
+							<div className='flex flex-col'>
+								<span>{data.client.name}</span>
+								<span>{data.client.addresss}</span>
+							</div>
 						</div>
 					</div>
 				</div>

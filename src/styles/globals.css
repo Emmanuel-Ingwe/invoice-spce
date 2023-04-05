@@ -14,6 +14,7 @@
 		@apply w-full h-full;
 	}
 	body {
+		overflow: visible;
 		@apply antialiased text-gray-900 bg-gray-100 flex items-center justify-center;
 	}
 }
@@ -21,6 +22,8 @@
 @layer components {
 	.page {
 		width: 180mm;
-		height: 160mm;
+		height: 290mm;
+		/* overflow: visible; */
+		margin-bottom: 50px;
 	}
 }
