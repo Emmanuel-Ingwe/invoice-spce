@@ -26,4 +26,8 @@
 		/* overflow: visible; */
 		margin-bottom: 50px;
 	}
+
+	.cont {
+		margin-top: 500px;
+	}
 }
