@@ -62,7 +62,7 @@ export default function Invoice() {
 	);
 
 	return (
-		<div>
+		<div className='cont'>
 			<div className='bg-white page shadow rounded-lg overflow-hidden space-y-8'>
 				<header className='bg-blue-800 p-12'>
 					<div>
