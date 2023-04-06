@@ -50,6 +50,24 @@ export default function Invoice() {
 			{ id: 2, description: "Line item #2", units: 3, price: 43321, vat: 0.14 },
 			{ id: 3, description: "Line item #3", units: 0, price: 2134, vat: 0.31 },
 			{ id: 4, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
+			{ id: 5, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
+			{
+				id: 6,
+				description: ["Line item #12", "\tsub item 2"].join("\n"),
+				units: 0,
+				price: 10030,
+				vat: 0.31,
+			},
+			{ id: 7, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
+			{ id: 8, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
+			{ id: 9, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
+			{
+				id: 10,
+				description: "Line item #4",
+				units: 2,
+				price: 10034,
+				vat: 0.71,
+			},
 		],
 	};
 
@@ -84,7 +102,7 @@ export default function Invoice() {
 					</span>
 				</div>
 
-				<div className='px-12 flex justify-between'>
+				<div className='px-6 flex justify-between'>
 					<div className='space-2 '>
 						<h3 className='font-semibold text-gray-400'>Information </h3>
 						<div className='flex space-x-2'>
@@ -113,7 +131,7 @@ export default function Invoice() {
 							<th className='uppercase border-b-2 border-none-slate-600 pl-5 text-left ...'>
 								Description
 							</th>
-							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
+							<th className='border-b-2 border-none-slate-600 pr-9 text-left..'>
 								#
 							</th>
 							<th className='border-b-2 border-none-slate-600 pr-9 text-left...'>
@@ -135,7 +153,7 @@ export default function Invoice() {
 							<tr
 								key={item.id}
 								className={lineIdx % 3 === 0 ? "bg-white border-b-2" : ""}>
-								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
+								<td className='px-6 py-4 whitespace-pre-wrap text-sm text-gray-500'>
 									{item.description}
 								</td>
 								<td className='px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500'>
@@ -145,10 +163,10 @@ export default function Invoice() {
 									{/* {numberFormatter.format(item.price / 100)} */}
 									{item.price}
 								</td>
-								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right'>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right align-top'>
 									{(item.vat * 100).toFixed(0)}%
 								</td>
-								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right tabular-nums'>
+								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right tabular-nums align-top'>
 									{item.price * item.units}
 								</td>
 							</tr>
@@ -175,7 +193,7 @@ export default function Invoice() {
 
 				<div className=''>
 					<div className='bg-blue-900 bg-opacity-75 w-full h-4'></div>
-					<div className='bg-blue-900 p-12 text-blue-100'>
+					<div className='bg-blue-900 text-blue-100 pb-12 pt-7 pl-12 pr-12'>
 						<div className='flex justify-between text-2xl font-semibold'>
 							<span>Total amount to be paid</span>
 							<span>£121.00</span>
@@ -187,7 +205,10 @@ export default function Invoice() {
 							</h3>
 							<div className='flex flex-col font-bold'>
 								<span>Email: hello@gbssh.com</span>
-								<span>VAT:</span>
+								<div>
+									<span>VAT:</span>
+									<span className='px-3 font-light'>BE00 000 000</span>
+								</div>
 								<span>IBAN:</span>
 							</div>
 						</div>
