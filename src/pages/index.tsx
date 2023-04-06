@@ -51,23 +51,23 @@ export default function Invoice() {
 			{ id: 3, description: "Line item #3", units: 0, price: 2134, vat: 0.31 },
 			{ id: 4, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
 			{ id: 5, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
-			{
-				id: 6,
-				description: ["Line item #12", "\tsub item 2"].join("\n"),
-				units: 0,
-				price: 10030,
-				vat: 0.31,
-			},
-			{ id: 7, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
-			{ id: 8, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
-			{ id: 9, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
-			{
-				id: 10,
-				description: "Line item #4",
-				units: 2,
-				price: 10034,
-				vat: 0.71,
-			},
+			// {
+			// 	id: 6,
+			// 	description: ["Line item #12", "\tsub item 2"].join("\n"),
+			// 	units: 0,
+			// 	price: 10030,
+			// 	vat: 0.31,
+			// },
+			// { id: 7, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
+			// { id: 8, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
+			// { id: 9, description: "Line item #4", units: 2, price: 10034, vat: 0.71 },
+			// {
+			// 	id: 10,
+			// 	description: "Line item #4",
+			// 	units: 2,
+			// 	price: 10034,
+			// 	vat: 0.71,
+			// },
 		],
 	};
 
@@ -89,7 +89,7 @@ export default function Invoice() {
 					</div>
 				</header>
 
-				<div className='p-6 flex justify-between'>
+				<div className='pl-6  flex justify-between'>
 					<span className='text-2xl space-x-3'>
 						<span>
 							<span className='text-blue-800 font-semibold uppercase'>
@@ -196,7 +196,7 @@ export default function Invoice() {
 					<div className='bg-blue-900 text-blue-100 pb-12 pt-7 pl-12 pr-12'>
 						<div className='flex justify-between text-2xl font-semibold'>
 							<span>Total amount to be paid</span>
-							<span>£121.00</span>
+							<span className='tabular-nums'>£121.00</span>
 						</div>
 
 						<div className='space-y-2'>
