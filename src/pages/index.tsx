@@ -19,7 +19,6 @@ interface Item {
 interface Invoice {
 	number: string;
 	me: {
-		name: ReactNode;
 		address: string;
 	};
 	items: Item[];
